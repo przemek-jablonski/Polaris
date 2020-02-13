@@ -19,6 +19,7 @@ private extension ___VARIABLE_appName______VARIABLE_screenName___View {
     private var helloWorldText: some View {
         Text("___FILEBASENAMEASIDENTIFIER___")
             .truncationMode(.head)
+            .padding()
             .background(Color(.displayP3,
                               red: Double.random(in: 0.0...1.0),
                               green: Double.random(in: 0.0...1.0),
@@ -29,6 +30,12 @@ private extension ___VARIABLE_appName______VARIABLE_screenName___View {
 
 struct SwiftUIPreview___VARIABLE_appName______VARIABLE_screenName___View: PreviewProvider {
     private static let context = ___VARIABLE_appName___InjectionAssembler.resolve(NSManagedObjectContext.self)
+
+    init() {
+//        _ = try? SwiftUIPreview___VARIABLE_appName______VARIABLE_screenName___View.context.execute(
+//            NSBatchDeleteRequest(fetchRequest: ___VARIABLE_appName______VARIABLE_screenName___Model.fetchRequest())
+//        )
+    }
 
     static var previews: some View {
         Group {
