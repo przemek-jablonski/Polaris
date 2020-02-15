@@ -1,21 +1,22 @@
 import Combine
 import CoreData
 import SwiftUI
+import SFSafeSymbols
 
-struct ___FILEBASENAMEASIDENTIFIER___: View {
+public struct ___FILEBASENAMEASIDENTIFIER___: View {
 
-    @ObservedObject private var viewModel: ___VARIABLE_appName______VARIABLE_screenName___ViewModel
+    @ObservedObject private var viewModel: ___VARIABLE_screenName___.ViewModel
 
-    init(viewModel: ___VARIABLE_appName______VARIABLE_screenName___ViewModel) {
+    init(viewModel: ___VARIABLE_screenName___.ViewModel) {
         self.viewModel = viewModel
     }
 
-    var body: some View {
+    public var body: some View {
         helloWorldText
     }
 }
 
-private extension ___VARIABLE_appName______VARIABLE_screenName___View {
+private extension ___VARIABLE_screenName___.View {
     private var helloWorldText: some View {
         Text("___FILEBASENAMEASIDENTIFIER___")
             .truncationMode(.head)
@@ -28,46 +29,33 @@ private extension ___VARIABLE_appName______VARIABLE_screenName___View {
     }
 }
 
+// MARK: - SwiftUI's PreviewProvider and it's extensions
+
 struct SwiftUIPreview___VARIABLE_appName______VARIABLE_screenName___View: PreviewProvider {
-    private static let context = ___VARIABLE_appName___InjectionAssembler.resolve(NSManagedObjectContext.self)
-
-    init() {
-//        _ = try? SwiftUIPreview___VARIABLE_appName______VARIABLE_screenName___View.context.execute(
-//            NSBatchDeleteRequest(fetchRequest: ___VARIABLE_appName______VARIABLE_screenName___Model.fetchRequest())
-//        )
-    }
-
     static var previews: some View {
-        Group {
-            ___FILEBASENAMEASIDENTIFIER___(viewModel: SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel())
-                .preview(on: .applewatch_old)
-
-            ___FILEBASENAMEASIDENTIFIER___(viewModel: SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel())
-                .preview(on: .applewatch_large)
-
-            ___FILEBASENAMEASIDENTIFIER___(viewModel: SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel())
-                .preview(on: .applewatch_small)
-        }
+        appleWatchPreviewGroup(with: ___VARIABLE_screenName___.View(viewModel: SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel([
+            ___VARIABLE_screenName___.RenderingModel(id: 1),
+            ___VARIABLE_screenName___.RenderingModel(id: 2),
+            ___VARIABLE_screenName___.RenderingModel(id: 3)
+        ])))
     }
 }
 
 // MARK: - Architecture mocks for SwiftUI's PreviewProvider
 
-private class SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel: ___VARIABLE_appName______VARIABLE_screenName___ViewModel {
-//    private let mockEvents: [___VARIABLE_appName______VARIABLE_screenName___Model]
+private class SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel: ___VARIABLE_screenName___.ViewModel {
+    private let mockRenderingModels: [___VARIABLE_screenName___.RenderingModel]
 
-    init(/*events: [___VARIABLE_appName______VARIABLE_screenName___Model]*/) {
-//        mockEvents = events
+    init(_ mocks: [___VARIABLE_screenName___.RenderingModel]) {
+        mockRenderingModels = mocks
         super.init(interactor: SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___Interactor())
     }
 
-//    override var events: [___VARIABLE_appName______VARIABLE_screenName___Model] {
-//        mockEvents
-//    }
+    override var renderingModels: [___VARIABLE_screenName___.RenderingModel] {
+        mockRenderingModels
+    }
 }
 
-private class SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___Interactor: ___VARIABLE_screenName___Interactor {
-//    var events: AnyPublisher<[___VARIABLE_appName______VARIABLE_screenName___Model], Never> = Just([]).eraseToAnyPublisher()
-//
-//    func createEvent() {}
+private class SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___Interactor: ___VARIABLE_screenName___.Interactor {
+    let models: AnyPublisher<[___VARIABLE_screenName___.Model], Never> = Just([]).eraseToAnyPublisher()
 }

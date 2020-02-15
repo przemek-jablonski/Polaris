@@ -7,7 +7,7 @@ launch_polaris:
 	mkdir -p $(XCODE_USER_TEMPLATES_DIR)
 	rm -fR $(XCODE_USER_TEMPLATES_DIR)/$(TEMPLATES_DIR)
 	cp -R $(TEMPLATES_DIR) $(XCODE_USER_TEMPLATES_DIR)
-	defaults write com.apple.dt.Xcode IDEAdditionalCounterpartSuffixes -array-add "ViewModel" "View" "Interactor" "Assembly"
+	defaults write com.apple.dt.Xcode IDEAdditionalCounterpartSuffixes -array-add "ViewModel" "View" "Interactor" "Assembly" "Model"
 
 remove_polaris:
 	rm -fR $(XCODE_USER_TEMPLATES_DIR)/$(TEMPLATES_DIR)

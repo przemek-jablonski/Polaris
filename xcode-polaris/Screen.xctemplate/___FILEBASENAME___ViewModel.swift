@@ -1,21 +1,29 @@
 import Combine
+import SFSafeSymbols
 
-internal class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, ViewModel {
+public class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, ViewModel {
 
+    @Published internal private(set) var renderingModels: [___VARIABLE_screenName___.RenderingModel] = []
+    private let interactor: ___VARIABLE_screenName___.Interactor
     private var cancellables = Set<AnyCancellable>()
-//    @Published internal private(set) var events: [___VARIABLE_appName______VARIABLE_screenName___Model] = []
 
-    private let interactor: ___VARIABLE_screenName___Interactor
-
-    init(interactor: ___VARIABLE_screenName___Interactor) {
+    init(interactor: ___VARIABLE_screenName___.Interactor) {
         self.interactor = interactor
-//        interactor.events
-//            .assign(to: \.events, on: self)
-//            .store(in: &cancellables)
+        interactor.models
+            .map ({ $0.renderingModels })
+            .assign(to: \.renderingModels, on: self)
+            .store(in: &cancellables)
     }
+}
 
-//    func addEventButtonClicked() {
-//        interactor.createEvent()
-//    }
+private extension Array where Element == ___VARIABLE_screenName___.Model {
+    var renderingModels: [___VARIABLE_screenName___.RenderingModel] {
+        map { $0.renderingModel }
+    }
+}
 
+private extension ___VARIABLE_screenName___.Model {
+    var renderingModel: ___VARIABLE_screenName___.RenderingModel {
+        ___VARIABLE_screenName___.RenderingModel(id: id)
+    }
 }
