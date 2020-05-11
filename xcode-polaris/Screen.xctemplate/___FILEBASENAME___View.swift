@@ -1,7 +1,6 @@
 import Combine
 import CoreData
 import SwiftUI
-import SFSafeSymbols
 
 public struct ___FILEBASENAMEASIDENTIFIER___: View {
 

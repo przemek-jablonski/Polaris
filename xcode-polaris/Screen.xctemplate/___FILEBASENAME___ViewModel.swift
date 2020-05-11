@@ -1,5 +1,4 @@
 import Combine
-import SFSafeSymbols
 
 public class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, ViewModel {
 
@@ -13,6 +12,10 @@ public class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, ViewModel {
             .map ({ $0.renderingModels })
             .assign(to: \.renderingModels, on: self)
             .store(in: &cancellables)
+    }
+
+    public func viewDisappeared() {
+        cancellables.cancelAll()
     }
 }
 

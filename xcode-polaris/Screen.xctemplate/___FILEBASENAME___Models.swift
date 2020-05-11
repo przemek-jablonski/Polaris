@@ -1,5 +1,4 @@
 import Foundation
-import SFSafeSymbols
 
 public enum ___VARIABLE_screenName___ {
     public typealias Assembly = ___VARIABLE_appName______VARIABLE_screenName___Assembly
