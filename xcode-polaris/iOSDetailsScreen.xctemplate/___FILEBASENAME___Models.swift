@@ -6,11 +6,11 @@ public enum ___VARIABLE_screenName___ {
     public typealias ViewModel = ___VARIABLE_appName______VARIABLE_screenName___ViewModel
     public typealias View = ___VARIABLE_appName______VARIABLE_screenName___View
 
-    public struct Model: Identifiable {
+    public struct Model: HashableIdentifiable {
         public let id: Int
     }
 
-    public struct RenderingModel: Identifiable {
+    public struct RenderingModel: HashableIdentifiable {
         public let id: Int
     }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DefaultCompletionName</key>
+	<string>iOSNewScreen</string>
+	<key>Description</key>
+	<string>Generates architecture components for the new screen.</string>
+	<key>Kind</key>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Description</key>
+			<string>Implementation Prefix:</string>
+			<key>Identifier</key>
+			<string>appName</string>
+			<key>Name</key>
+			<string>Implementation Prefix:</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>New Screen Name:</string>
+			<key>Identifier</key>
+			<string>screenName</string>
+			<key>Name</key>
+			<string>New Screen Name:</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_appName:identifier______VARIABLE_screenName:identifier___</string>
+			<key>Identifier</key>
+			<string>productName</string>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_appName:identifier______VARIABLE_screenName:identifier___ViewModel.swift</string>
+			<key>Description</key>
+			<string>Example</string>
+			<key>Identifier</key>
+			<string>example</string>
+			<key>Name</key>
+			<string>Example:</string>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+	</array>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>SortOrder</key>
+	<string>0</string>
+	<key>Summary</key>
+	<string>Generates architecture components for the new screen.</string>
+</dict>
+</plist>
