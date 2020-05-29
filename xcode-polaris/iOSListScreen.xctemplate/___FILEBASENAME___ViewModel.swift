@@ -38,8 +38,7 @@ private extension ___VARIABLE_screenName___.Model {
     }
 }
 
-private extension RenderableCollection where
-    Content == ___VARIABLE_screenName___.Model, Error == Architecture.ApplicationError {
+private extension RenderableCollection where Content == ___VARIABLE_screenName___.Model, Error == Architecture.ApplicationError {
     func asRenderables() -> ___VARIABLE_screenName___.ViewModel.Renderables {
         map { $0.map({ $0.asRenderingModel() }) }
     }
