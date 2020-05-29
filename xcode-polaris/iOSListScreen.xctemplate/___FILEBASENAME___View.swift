@@ -37,7 +37,11 @@ struct SwiftUIPreview___VARIABLE_appName______VARIABLE_screenName___View: Previe
     static var previews: some View {
         Group {
             iPhonePreviewGroup(with: ___VARIABLE_screenName___.View(viewModel:
-                SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel(.content(content: ___VARIABLE_screenName___.RenderingModel(id: -1)))
+                SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel(.content(content: [
+                  ___VARIABLE_screenName___.RenderingModel(id: -1),
+                  ___VARIABLE_screenName___.RenderingModel(id: -1),
+                  ___VARIABLE_screenName___.RenderingModel(id: -1),
+                ]))
             ))
             ___VARIABLE_screenName___.View(viewModel:
                 SwiftUIMock___VARIABLE_appName______VARIABLE_screenName___ViewModel(.loading)

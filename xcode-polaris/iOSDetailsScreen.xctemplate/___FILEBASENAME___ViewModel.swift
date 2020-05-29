@@ -16,7 +16,7 @@ public class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, Architecture.View
         interactor.models
             .subscribe(on: DispatchQueue.global(qos: .userInitiated))
             .map ({ $0.asRenderables() })
-            .logEvents(with: "___FILEBASENAMEASIDENTIFIER___, interactor.models")
+            .logEvents(with: "___VARIABLE_screenName___.ViewModel, interactor.models")
             .receive(on: DispatchQueue.main)
             .assign(to: \.renderingModels, on: self)
             .store(in: &cancellables)
@@ -32,15 +32,14 @@ public class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, Architecture.View
     }
 }
 
-private extension ___VARIABLE_screenName___.Model {
-    func asRenderingModel() -> ___VARIABLE_screenName___.RenderingModel {
-        ___VARIABLE_screenName___.RenderingModel(id: -1)
+private extension RenderableContent where Content == ___VARIABLE_screenName___.Model, Error == Architecture.ApplicationError {
+    func asRenderables() -> ___VARIABLE_screenName___.ViewModel.Renderables {
+        map { $0.asRenderingModel() }
     }
 }
 
-private extension RenderableContent where
-    Content == ___VARIABLE_screenName___.Model, Error == Architecture.ApplicationError {
-    func asRenderables() -> ___VARIABLE_screenName___.ViewModel.Renderables {
-        map { $0.asRenderingModel() }
+private extension ___VARIABLE_screenName___.Model {
+    func asRenderingModel() -> ___VARIABLE_screenName___.RenderingModel {
+        ___VARIABLE_screenName___.RenderingModel(id: -1)
     }
 }

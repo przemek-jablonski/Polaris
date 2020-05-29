@@ -11,23 +11,29 @@ public struct ___FILEBASENAMEASIDENTIFIER___: View {
     }
 
     public var body: some View {
-      ViewModelSyncedView(loggingPrefix: "___FILEBASENAMEASIDENTIFIER___",
-                          viewModel: self.viewModel) {
-          self.helloWorldText
-      }
+        ViewModelSyncedView(loggingPrefix: "___VARIABLE_screenName___.View", viewModel: self.viewModel) {
+            ___VARIABLE_appName___RenderableView(renderable: self.viewModel.renderingModels) { details in
+                self.exampleDetails(details).erased()
+            }
+        }
     }
 }
 
 private extension ___VARIABLE_screenName___.View {
-    private var helloWorldText: some View {
-        Text("___FILEBASENAMEASIDENTIFIER___")
-            .truncationMode(.head)
-            .padding()
-            .background(Color(.displayP3,
-                              red: Double.random(in: 0.0...1.0),
-                              green: Double.random(in: 0.0...1.0),
-                              blue: Double.random(in: 0.0...1.0),
-                              opacity: 0.5))
+    private func exampleDetails(_ renderingModel: ___VARIABLE_screenName___.RenderingModel) -> some View {
+        List {
+            Section(header: Text("___FILEBASENAMEASIDENTIFIER___")) {
+                Text("___VARIABLE_screenName___.View")
+                    .truncationMode(.head)
+                    .listRowBackground(Color.random)
+                Text("___VARIABLE_screenName___.RenderingModel, id: \(renderingModel.id)")
+                    .truncationMode(.head)
+                    .listRowBackground(Color.random)
+                Text("___VARIABLE_screenName___.RenderingModel, hash: \(renderingModel.hashValue)")
+                    .truncationMode(.head)
+                    .listRowBackground(Color.random)
+            }
+        }
     }
 }
 

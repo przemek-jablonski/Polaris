@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>DefaultCompletionName</key>
-	<string>iOSNewScreen</string>
+	<string>Details Screen (iOS)</string>
 	<key>Description</key>
 	<string>Generates architecture components for the new screen.</string>
 	<key>Kind</key>

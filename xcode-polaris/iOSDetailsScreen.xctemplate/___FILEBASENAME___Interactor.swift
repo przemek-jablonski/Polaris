@@ -18,7 +18,7 @@ internal class ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_screenName___.Interac
         self.commonModelsMapper = commonModelsMapper
         #warning("Replace `self.repository.entities` with actual method / property.")
         models = self.repository
-            .entities(for: id)
+            .entity(for: id)
             .subscribe(on: DispatchQueue.global(qos: .userInitiated))
             .renderableContent(
                 mappingOutput: { $0.asRenderables(with: commonModelsMapper) },
@@ -28,14 +28,14 @@ internal class ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_screenName___.Interac
 }
 
 private extension SOME_TYPE_FROM_REPOSITORY {
-    func asModel(with mapper: CommonModelsMapper) -> ___VARIABLE_screenName___.Model {
-        ___VARIABLE_screenName___.Model(id: -1)
+    func asRenderables(with mapper: CommonModelsMapper) -> ___VARIABLE_screenName___.Interactor.Renderables {
+        .content(content: asModel(with: mapper))
     }
 }
 
 private extension SOME_TYPE_FROM_REPOSITORY {
-    func asRenderables(with mapper: CommonModelsMapper) -> ___VARIABLE_screenName___.Interactor.Renderables {
-        .content(content: asModel(with: mapper))
+    func asModel(with mapper: CommonModelsMapper) -> ___VARIABLE_screenName___.Model {
+        ___VARIABLE_screenName___.Model(id: -1)
     }
 }
 

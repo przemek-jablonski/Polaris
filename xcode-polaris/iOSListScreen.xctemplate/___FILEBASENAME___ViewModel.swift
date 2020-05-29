@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 public extension ___VARIABLE_screenName___.ViewModel {
-    typealias Renderables = RenderableContent<___VARIABLE_screenName___.RenderingModel, Architecture.ApplicationError>
+    typealias Renderables = RenderableCollection<___VARIABLE_screenName___.RenderingModel, Architecture.ApplicationError>
 }
 
 public class ___FILEBASENAMEASIDENTIFIER___: ObservableObject, Architecture.ViewModel {
@@ -38,9 +38,9 @@ private extension ___VARIABLE_screenName___.Model {
     }
 }
 
-private extension RenderableContent where
+private extension RenderableCollection where
     Content == ___VARIABLE_screenName___.Model, Error == Architecture.ApplicationError {
     func asRenderables() -> ___VARIABLE_screenName___.ViewModel.Renderables {
-        map { $0.asRenderingModel() }
+        map { $0.map({ $0.asRenderingModel() }) }
     }
 }
