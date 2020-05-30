@@ -12,7 +12,7 @@ public struct ___FILEBASENAMEASIDENTIFIER___: View {
 
     public var body: some View {
         ViewModelSyncedView(loggingPrefix: "___VARIABLE_screenName___.View", viewModel: self.viewModel) {
-            ___VARIABLE_appName___RenderableView(renderable: self.viewModel.renderingModels) { models in
+            ___VARIABLE_appName___RenderableCollectionView(renderable: self.viewModel.renderingModels) { models in
                 self.exampleList(models).erased()
             }
         }

@@ -16,7 +16,6 @@ internal class ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_screenName___.Interac
     init(repository: Repository, commonModelsMapper: CommonModelsMapper) {
         self.repository = repository
         self.commonModelsMapper = commonModelsMapper
-        #warning("Replace `self.repository.entities` with actual method / property.")
         models = self.repository
             .entities
             .subscribe(on: DispatchQueue.global(qos: .userInitiated))
